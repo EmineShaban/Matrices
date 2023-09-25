@@ -6,8 +6,12 @@ import java.util.Scanner;
 public class Main7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-         int row = Integer.parseInt(sc.nextLine());
-         int [][] matrix = new int [row][row];
+        String [] command = sc.nextLine().split(" ");
+        int row = Integer.parseInt(command[0]);
+        int col = Integer.parseInt(command[1]);
+        int [][] matrix = new int [row][col];
+        int n = 0;
+
         int num = 0;
 
 
@@ -19,25 +23,28 @@ public class Main7 {
         }
 
 
-        for (int rows = 0; rows < row; rows++) {
-            for (int cols = 0; cols < row; cols++) {
 
-
-            }
-        }
 
         for (int i = 0; i < row; i++) {
-
-            System.out.print(matrix[i][i] + " ");
-        }
+num+=matrix[i][n];
+            n++;
+            if(n >= row){
+                break;
+            }
+         }
         System.out.println();
+        n = 0;
         for (int i = row-1; i >= 0 ; i--) {
-            System.out.print(matrix[i][num] + " ");
-            num++;
-            if(num >= row){
+            num+=matrix[i][n];
+
+
+            n++;
+            if(n >= row){
                 break;
             }
         }
+
+        System.out.println(num);
     }
 }
 
